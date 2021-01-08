@@ -19,6 +19,7 @@
 		<commons-lang3.version>3.11</commons-lang3.version>
 		<commons-math3.version>3.6.1</commons-math3.version>
 		<commons-io.version>2.8.0</commons-io.version>
+		<log4j.version>2.14.0</log4j.version>
 	</properties>
 
 	<dependencies>
@@ -38,6 +39,13 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version> ${commons-io.version}</version>
+		</dependency>
+		<!-- 日志依赖 -->
+		<!-- SLF4J和Logback框架都有一年多没有更新，此处直接使用 Log4j 2 框架 -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version> ${log4j.version}</version>
 		</dependency>
 		<!-- 测试依赖 -->
 		<dependency>
