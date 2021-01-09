@@ -1,15 +1,16 @@
 package com.sweetmanor.utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.io.File;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * 此测试类只在本机可以运行，在其他机器上运行前应该修改指定的测试目录等参数。
+ * 此测试类只在本机可以正确运行，在其他机器上运行前应该修改指定的测试目录等参数。
  */
 public class FileUtilTest {
 	private final String existDir = "E:\\参考资料\\lib\\apache\\commons-io\\commons-io-2.6";// 应该存在的文件夹
@@ -22,10 +23,17 @@ public class FileUtilTest {
 	/**
 	 * 测试文件是否存在
 	 */
-	@Test
+	@BeforeEach
 	public void testIsExist() {
-		assertTrue(FileUtil.isExist(existDir));
-		assertFalse(FileUtil.isExist(notExistFile));
+		assumeTrue(FileUtil.isExist(existDir));
+	}
+
+	/**
+	 * 测试文件是否存在
+	 */
+	@Test
+	public void testIsNotExist() {
+		assumeFalse(FileUtil.isExist(notExistFile));
 	}
 
 	/**
