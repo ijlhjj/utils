@@ -6,7 +6,7 @@
 
 	<groupId>com.sweetmanor</groupId>
 	<artifactId>utils</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<name>Java基础工具类集合</name>
 	<url>http://sweetmanor.com/</url>
